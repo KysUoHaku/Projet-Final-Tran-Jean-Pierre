@@ -17,3 +17,9 @@ spec:
         image: mon-image-flask:latest
         ports:
         - containerPort: 8080
+# Ajoutez le securityContext sous l'image
+      containers:
+      - name: flask-api
+        image: mon-image-flask:latest
+        securityContext:
+          runAsNonRoot: true
